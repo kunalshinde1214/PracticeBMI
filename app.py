@@ -90,7 +90,7 @@ def evaluate_model(y_true, y_pred):
     }
 
 def load_and_train_model():
-    df = pd.read_csv("/static/BMI_main.csv")
+    df = pd.read_csv('static/BMI_main.csv')
     df.drop(['Person ID A1', 'Feet', 'Inches', 'Pounds', 'Age', 'BMI'], axis=1, inplace=True)
     df['Height'] *= 100  # Convert height to cm if needed
 
