@@ -1,166 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>COVID BMI Predictor</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-</head>
-<body>
-  <!-- Navigation Bar -->
-  <nav class="nav">
-    <div class="logo">BMI Predictor</div>
-    <div class="nav-links">
-      <a href="{{ url_for('home') }}">Home</a>
-      <a href="{{ url_for('form') }}">Predict</a>
-      <a href="https://mlmodeloverview.netlify.app/">Visualise</a>
-      <a href="https://bmidatabase.netlify.app/">Database</a>
-      <a href="{{ url_for('about') }}">About</a>
-    </div>
-  </nav>
+{% extends "base.html" %}
 
-  <!-- Hero Section -->
-  <section id="home" class="section">
-    <div c>
-      <h1>Welcome to the COVID BMI Predictor</h1>
-      <p>
-        Our advanced machine learning model helps you predict your post-COVID BMI and understand how the pandemic has influenced body weight trends.
-      </p>
-      <button class="button" onclick="location.href='{{ url_for('form') }}'">Try It Now</button>
-    </div>
-  </section>
+{% block title %}COVID BMI Predictor - Advanced Health Analytics{% endblock %}
 
-  <!-- About Project Section -->
-  <section id="about-project" class="section">
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
     <div class="container">
-      <h2 class="section-title">About the Project</h2>
-      <p>
-        This project was developed to offer a comprehensive analysis of how COVID-19 has affected individuals' BMI. Leveraging a robust dataset and state-of-the-art machine learning algorithms, our tool provides accurate predictions and valuable insights into weight trends during and after the pandemic.
-      </p>
-      <p>
-        Whether you are a healthcare professional, researcher, or simply curious about your health, the COVID BMI Predictor is designed to help you understand the impact of lifestyle changes brought on by the pandemic.
-      </p>
-      <p>
-        Explore our research papers, prediction tools, and interactive visualizations to learn more about the methodologies and findings behind this initiative.
-      </p>
-    </div>
-  </section>
-
-  <!-- Research Papers Section -->
-  <section id="research" class="section">
-    <div class="container">
-      <h2 class="section-title">Research Papers</h2>
-      <div class="papers-grid">
-        <a href="static/paper1.pdf">
-          <div class="paper-card">
-            <h3 class="paper-title">BMI Analysis Pre-Covid And Post-Covid Using Machine Learning Algorithms</h3>
-            <p class="paper-authors">Mr. Pritam Ahire et al.</p>
-          </div>
-        </a>
-        <a href="static/paper2.pdf">
-          <div class="paper-card">
-            <h3 class="paper-title">Monitoring Body Mass Index (BMI) Pre &amp; Post Covid-19 Outbreak: A Comprehensive Study in Healthcare</h3>
-            <p class="paper-authors">Pritam Ramesh Ahire, K. Ulaga Priya, et al.</p>
-          </div>
-        </a>
-        <a href="static/paper3.pdf">
-          <div class="paper-card">
-            <h3 class="paper-title">Machine Learning and Clinical Insights Analysis of BMI Dataset Predictive Models</h3>
-            <p class="paper-authors">Laksh Kadyan, Vikram Neerugatti, et al.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- BMI Information Section -->
-  <section id="bmi-info" class="section">
-    <div class="container">
-      <h2 class="section-title">Understanding BMI</h2>
-      <div class="bmi-info-grid">
-        <div class="info-card">
-          <div class="info-icon">📊</div>
-          <h3>What is BMI?</h3>
-          <p>
-            Body Mass Index (BMI) is a measure of body fat based on height and weight. It evaluates whether your body weight is in a healthy range.
-          </p>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">📈</div>
-          <h3>BMI Categories</h3>
-          <p>
-            - Underweight: &lt; 18.5<br />
-            - Normal weight: 18.5-24.9<br />
-            - Overweight: 25-29.9<br />
-            - Obese: ≥ 30
-          </p>
-        </div>
-        <div class="info-card">
-          <div class="info-icon">🎯</div>
-          <h3>BMI Limitations</h3>
-          <p>
-            BMI does not directly measure body fat and may not be fully accurate for athletes, the elderly, or certain ethnic groups. It is one of many health indicators.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COVID Impact Section -->
-  <section id="covid-impact" class="section">
-    <div class="container">
-      <h2 class="section-title">COVID-19 Impact on BMI</h2>
-      <div class="covid-impact">
-        <div class="impact-grid">
-          <div class="impact-card">
-            <h3>Physical Activity Changes</h3>
-            <span> </span>
-            <p>
-              Lockdowns and restrictions led to reduced physical activity and increased sedentary behavior, contributing to weight gain in many individuals.
+        <div class="hero-content floating-card" data-delay="0">
+            <h1 class="hero-title">COVID BMI Predictor</h1>
+            <p class="hero-subtitle">
+                Advanced machine learning model that predicts post-COVID BMI and analyzes how the pandemic has influenced
+                body weight trends with unprecedented accuracy.
             </p>
-          </div>
-          <div class="impact-card">
-            <h3>Dietary Changes</h3>
-            <span> </span>
-            <p>
-              Stress eating and limited access to fresh foods during lockdowns affected eating habits and weight management.
-            </p>
-          </div>
-          <div class="impact-card">
-            <h3>Direct Disease Impact</h3>
-            <span> </span>
-            <p>
-              COVID-19 infection can affect metabolism, appetite, and muscle mass, leading to notable weight changes.
-            </p>
-          </div>
-          <div class="impact-card">
-            <h3>Mental Health Effects</h3>
-            <span> </span>
-            <p>
-              Increased anxiety, depression, and stress during the pandemic influenced overall eating patterns and health behaviors.
-            </p>
-          </div>
+            {% if session.user %}
+                <a href="{{ url_for('form') }}" class="btn btn-primary btn-glow">
+                    <i class="fas fa-calculator"></i>
+                    Start Prediction
+                </a>
+            {% else %}
+                <a href="{{ url_for('signup') }}" class="btn btn-primary btn-glow">
+                    <i class="fas fa-user-plus"></i>
+                    Get Started
+                </a>
+            {% endif %}
         </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- Footer Section -->
-  <footer class="footer">
+<!-- Features Section -->
+<section class="section">
     <div class="container">
-      <div class="footer-content">
-        <p>&copy; 2025 COVID BMI Predictor. All rights reserved.</p>
-        <ul class="footer-links">
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div>
+        <div class="floating-card" data-delay="0.2">
+            <h2 class="section-title">Why Choose Our Platform?</h2>
+        </div>
+        <div class="features-grid">
+            <div class="glass-card feature-card floating-card" data-delay="0.4">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>Advanced ML Models</h3>
+                <p>Multiple machine learning algorithms including Random Forest, KNN, Stacking, and K means clustering for accurate predictions.</p>
+            </div>
+            <div class="glass-card feature-card floating-card" data-delay="0.6">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Secure & Private</h3>
+                <p>Your health data is encrypted and protected with industry-standard security measures.</p>
+            </div>
+            <div class="glass-card feature-card floating-card" data-delay="0.8">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Real-time Analytics</h3>
+                <p>Get instant predictions with detailed analysis and personalized health recommendations.</p>
+            </div>
+        </div>
     </div>
-  </footer>
+</section>
 
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
-</html>
+<!-- About Project Section -->
+<section class="section">
+    <div class="container">
+        <div class="glass-card floating-card" data-delay="1.0">
+            <div class="about-project-content">
+                <h2 class="section-title">About the Project</h2>
+                <div class="about-content">
+                    <p>
+                        This groundbreaking project leverages cutting-edge machine learning algorithms to provide
+                        comprehensive analysis of COVID-19's impact on individual BMI patterns. Our sophisticated model
+                        processes vast datasets to deliver accurate predictions and valuable insights.
+                    </p>
+                    <p>
+                        Whether you're a healthcare professional, researcher, or health-conscious individual, our project
+                        offers unprecedented insights into pandemic-related weight trends and personalized health
+                        recommendations.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Statistics Section -->
+<section class="section">
+    <div class="container">
+        <div class="floating-card" data-delay="1.2">
+            <h2 class="section-title">Platform Statistics</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="glass-card stat-card floating-card" data-delay="1.4">
+                <div class="stat-number">867</div>
+                <div class="stat-label">Training Records</div>
+                <div class="stat-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+            </div>
+            <div class="glass-card stat-card floating-card" data-delay="1.6">
+                <div class="stat-number">91.7%</div>
+                <div class="stat-label">Model Accuracy</div>
+                <div class="stat-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+            </div>
+            <div class="glass-card stat-card floating-card" data-delay="1.8">
+                <div class="stat-number">8</div>
+                <div class="stat-label">ML Algorithms</div>
+                <div class="stat-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+            </div>
+            <div class="glass-card stat-card floating-card" data-delay="2.0">
+                <div class="stat-number">04</div>
+                <div class="stat-label">Key Features</div>
+                <div class="stat-icon">
+                    <i class="fas fa-list"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+{% if not session.user %}
+<section class="section cta-section">
+    <div class="container">
+        <div class="glass-card cta-card floating-card" data-delay="2.2">
+            <h2>Ready to Get Started?</h2>
+            <p>Join thousands of users who trust our platform for accurate BMI predictions and health insights.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('signup') }}" class="btn btn-primary btn-glow">
+                    <i class="fas fa-user-plus"></i>
+                    Create Account
+                </a>
+                <a href="{{ url_for('login') }}" class="btn btn-secondary">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign In
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
