@@ -197,17 +197,6 @@ def about():
 def model_performance_route():
     return render_template('performance.html', performances=model_performance)
 
-@app.route('/paper1')
-def paper1():
-    return url_for('static', filename='paper1.pdf')
-
-@app.route('/paper2')
-def paper2():
-    return url_for('static', filename='paper2.pdf')
-
-@app.route('/paper3')
-def paper3():
-    return url_for('static', filename='paper3.pdf')
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0",port=5000)
