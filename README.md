@@ -17,8 +17,10 @@
 > You can try out the BMI calculator live here: [Live Demo](https://bmi-gngr.onrender.com/) 
 
 ## Screenshots
-
+--**Implementation**
 ![Screenshot of BMI Calculator](static/bmi.png) 
+
+--**Project Competition**
 ![Screenshot of Project Competition](static/competition.jpg) 
 ## Technologies Used
 
@@ -58,14 +60,14 @@ Obese	30 and above
 
 
 Folder Structure
-
+```
 PracticeBMI/
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
 
-
+```
 
 
 
