@@ -17,10 +17,10 @@
 > You can try out the BMI calculator live here: [Live Demo](https://bmi-gngr.onrender.com/) 
 
 ## Screenshots
---**Implementation**
+- **Implementation**
 ![Screenshot of BMI Calculator](static/bmi.png) 
 
---**Project Competition**
+- **Project Competition**
 ![Screenshot of Project Competition](static/competition.jpg) 
 ## Technologies Used
 
