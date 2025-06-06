@@ -193,6 +193,10 @@ def predict():
 def about():
     return render_template('about.html')
 
+@app.route('/database')
+def database():
+    return render_template('database.html')
+
 @app.route('/model_performance')
 def model_performance_route():
     return render_template('performance.html', performances=model_performance)
