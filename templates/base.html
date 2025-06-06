@@ -31,6 +31,9 @@
                 <a href="{{ url_for('model_performance_route') }}" class="nav-link {% if request.endpoint == 'model_performance_route' %}active{% endif %}">
                     <i class="fas fa-chart-line"></i> Performance
                 </a>
+                <a href="{{ url_for('database') }}" class="nav-link {% if request.endpoint == 'database' %}active{% endif %}">
+                    <i class="fas fa-database"></i> Database
+                </a>
                 <a href="{{ url_for('about') }}" class="nav-link {% if request.endpoint == 'about' %}active{% endif %}">
                     <i class="fas fa-info-circle"></i> About
                 </a>
