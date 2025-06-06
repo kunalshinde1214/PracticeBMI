@@ -62,9 +62,19 @@ Obese	30 and above
 Folder Structure
 ```
 PracticeBMI/
-├── index.html
-├── style.css
-├── script.js
+└── templates
+   |──index.html
+   |──base.html
+   |──performance.html
+   |──404.html
+   |──500.html
+   |──
+└──static
+   ├── style.css
+   ├── script.js
+└── app.py
+└── form.py
+└── requirements.txt
 └── README.md
 
 ```
