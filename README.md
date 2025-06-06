@@ -68,10 +68,22 @@ PracticeBMI/
    |──performance.html
    |──404.html
    |──500.html
-   |──
+   |──about.html
+   |──signup.html
+   |──login.html
+   |──database.html
+   |──data_analysis.html
+   |──form.html
+   |──result.html
 └──static
    ├── style.css
    ├── script.js
+   |── paper1.pdf
+   |── paper2.pdf
+   |── paper3.pdf
+   |── IJCRT.pdf
+   |── IJNRD.pdf
+   |── images
 └── app.py
 └── form.py
 └── requirements.txt
