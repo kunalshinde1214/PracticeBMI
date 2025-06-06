@@ -14,12 +14,12 @@
 
 ## Demo
 
-> You can try out the BMI calculator live here: [Live Demo](#) *(Add GitHub Pages or deployment link if available)*
+> You can try out the BMI calculator live here: [Live Demo](https://bmi-gngr.onrender.com/) 
 
 ## Screenshots
 
-![Screenshot of BMI Calculator](screenshots/bmi_calculator.png) *(Add screenshot image if available in repo)*
-
+![Screenshot of BMI Calculator](static/bmi.png) 
+![Screenshot of Project Competition](static/competition.jpg) 
 ## Technologies Used
 
 - **HTML5** – Page structure
